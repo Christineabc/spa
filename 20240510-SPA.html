@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/myall.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/animate.min.css">
+    <title>ch14. SPA-形象網製作</title>
+    <style>
+        .timeline-section{
+            position: relative;
+        }
+
+        .timeline-section::before{
+        position: absolute;
+        content: "";
+        top:0;
+        bottom: 0;
+        background-color: aliceblue;
+        width: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        }
+
+        .caption-text{
+            background-color: rgb(0, 0, 0,0.3);
+        }
+
+        .text-cover{
+            background-color: rgb(0, 0, 0,0.3); 
+        }
+
+        .timeline-section-pointer{
+        position: relative;
+    }
+    .timeline-section-pointer::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        height:20px ;
+        width:20px;
+        background-color: white;
+        border:8px solid #691b1b;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .container01{
+        background-color: var(--mycolor06);
+        height:750px;
+    }
+    .fa-cookie-bite{
+        color: var(--mycolor02);
+    }
+    .fa-space-awesome{
+        color:maroon;
+    }
+    .fa-chalkboard-user{
+        color:#F2AB39;
+    }
+    .fa-location-dot{
+        color:var(--mycolor12);
+    }
+   .container02{
+    background-color:var(--mycolor01); 
+   }
+   .ab{
+    color:navy;
+    background-color: #ffd954;
+    padding: 5px;
+    display: block;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+   }
+   .abc{
+    background-color:#EAD6BD;
+   }
+   .container03{
+    background-color: var(--mycolor02);
+   }
+   .sec {
+  display:flex;
+  width: 100%;
+  height: 400px;
+  bottom: 0;
+  left: 0;
+}
+
+.sec__half {
+    width: 50%;
+    display: table-cell;
+    padding: 80px 80px;
+}
+
+.sec__half-1 {
+    background-image: url(images/dog3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.sec__half-2 {
+    background-color: #000;
+}
+
+.sec__big-title {
+    margin-top: 0;
+    /* text-transform: uppercase; */
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.sec__title {
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color:var(--mycolor04);
+    background-color: #d7d7d7;
+    display:inline-flex;
+    border-radius: 10px;
+    padding: 10px;
+}
+.sec__title01{
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #daa37f;
+}
+
+.sec__desc {
+    color: aliceblue;
+    margin-bottom: 25px;
+}
+.btn1{
+    background-color: var(--mycolor03);
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+.container14{
+    background-color: var(--mycolor01);
+}
+   @media screen and (max-width:768px){
+    .text-s07, .text-s09{
+        z-index: 10;
+        background-color:rgb(0, 0, 0,0.3) ;
+        color:aliceblue;
+        margin:15px;
+        padding:15px;
+    }
+
+   }
+    </style>
+   
+</head>
+<body class="bg-light">
+    <!-- section 01 -->
+    <section class="bg-secondary">
+        <div class="container">
+            <div class="text-end">
+                <a href="#"><i class="fa-brands fa-square-facebook text-warning"></i></a>
+                <i class="fa-brands fa-square-x-twitter text-danger"></i>
+                <i class="fa-brands fa-square-instagram text-info"></i>
+            </div>
+        </div>
+    </section>
+    <!-- section 02 -->
+    <section>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-ice-cream text-warning wow animate__tada" data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1"></i>
+                    <!-- <i class="fa-solid fa-champagne-glasses text-danger wow animate__fadeInLeft " data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1"></i> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#s04">公司介紹</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#s05">導覽</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#s06">經營理念</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#s10">聯絡我們</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                服務項目
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#s08">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">登入</button>
+                        <button class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">註冊</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h1 class="modal-title fs-5 text-white fw-900" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">帳號</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">密碼</label>
+                        <input type="password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h1 class="modal-title fs-5 text-white fw-900" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row timeline-section">
+                        <div class="col-6">
+                            <div class="h3 fw-700 text-center">會員守則</div>
+                            <p>尊重他人：<small>會員應該尊重其他社群成員，包括避免言語或行為上的侮辱、歧視或騷擾。尊重他人的意見和觀點，並避免任何形式的人身攻擊。</small></p>
+                            <p>遵守規則：<small>會員應該遵守社群的規則和守則，包括在討論區或平台上的任何相關規定。違反這些規則可能會導致處罰或帳戶被禁止。</small></p>
+                            <p>保護隱私：<small>會員應該尊重他人的隱私權，不得未經許可公開或分享他人的個人資訊。同時，會員也應該保護自己的隱私，避免分享過多個人敏感信息。</small></p>
+                            <p>建設性參與：<small>會員應該以建設性的態度參與社群活動，包括發表有意義的評論、提供有益的建議，並積極參與討論和解決問題。</small></p>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" name="" id="">
+                                <label for="" class="form-check-label">同意</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">帳號</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">密碼</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">確認密碼</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section 03 -->
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item bg-cover active" style="background-image: url(images/chocolate\ bg01.jpg); height: 90vh;">
+                    <div class="carousel-caption d-none d-md-block caption-text">
+                        <h5 class="fw-700 text-danger wow animate__bounce"  data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">Treat yourself wonderful</h5>
+                        <p>Create a custom mix of flavors</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(images/chocolate\ bg02.jpg); height: 90vh;">
+                    <div class="carousel-caption d-none d-md-block caption-text">
+                        <h5 class="fw-900 text-danger wow animate__bounce"  data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">Fill your spring with wonder</h5>
+                        <p>Indulge in the magic of spring with our tantalizing chocolate creations, filling your days with wonder and delight.</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(images/chocolate\ bg03.jpg); height: 90vh;">
+                    <div class="carousel-caption d-none d-md-block caption-text">
+                        <h5 class="fw-900 text-danger wow animate__bounce"  data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">Indulge in the rich purness</h5>
+                        <p>Immerse yourself in the luxurious purity of chocolate, where every bite unveils a symphony of richness and indulgence.</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(images/chocolate\ bg04.webp); height: 90vh;">
+                    <div class="carousel-caption d-none d-md-block caption-text">
+                        <h5 class="fw-900 text-danger wow animate__bounce"  data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">New Flavor</h5>
+                        <p>Experience the perfect harmony of creamy milk chocolate, luscious caramel, and crunchy cone in every blissful bite.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+       
+    <!-- <section 04> -->
+        <section id="s04">
+            <div class="row align-items-center">
+                <div class="col-md-5" style="background-image: url(images/dog2.jpg); height:600px;background-attachment: fixed; background-position:-200px 40px;background-size: cover;background-repeat: no-repeat;"></div>
+                <div class="col-md-7 p-5">
+                    <h1>Godiva 巧克力公司成立於1926年<br> <span class="text-success">是一家享譽全球的高端巧克力品牌</span></h1>
+                    <p class="mb-3">天然的用心堅持</p>
+                    <p class="mb-1">Godiva 巧克力公司的產品範圍涵蓋了各種巧克力、朱古力、曲奇餅乾、糖果等，每一件產品都精心設計，以滿足不同客戶的口味和喜好</p>
+                    <p class="mb-1">作為全球領先的巧克力品牌之一，Godiva 巧克力公司的產品銷售遍及世界各地，享有極高的知名度和聲譽。公司積極參與慈善事業，通過不斷創新和改進，致力於為客戶帶來更多美味和驚喜。</p>
+                    <div class="row mt-5">
+                        <div class="col-md-3">
+                            <h4>年均文創市集</h4>
+                            <h2 class="fw-900 text-danger counter01">100 <span class="h4 text-muted">/場</span></h2>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>獲獎數目</h4>
+                            <h2 class="fw-900 text-warning counter02">99 <span class="h4 text-muted">/項</span></h2>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>專業認證</h4>
+                            <h2 class="fw-900 text-primary counter03">12 <span class="h4 text-muted">/個</span></h2>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>公司據點</h4>
+                            <h2 class="fw-900 text-info counter04">20 <span class="h4 text-muted">/個</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- <section 05> -->
+    <section id="s05">
+        <section class="bg-dark bg-cover" style="background-image: url(images/landscape05.avif);background-attachment: fixed;">
+            <div class="container">
+               <div class="row align-items-center">
+                   <div class="col-md-3 text-white py-5 me-auto">
+                       <div class="text-cover rounded rounded-3 shadow-lg p-3 wow animate__fadeInLeftBig" data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1" >
+                           <h2 class="text-center">活動資訊</h2>
+                           <ul>
+                            <li>學習從可可豆到巧克力的製作過程</li>
+                            <li>親身體驗製作巧克力的樂趣</li>
+                            <li>品嚐新鮮製作的巧克力</li>
+                        </ul>
+                       </div>
+                   </div>
+       
+                   <div class="col-md-8 py-5">
+                       <div class="container">
+                           <div class="timeline-section">
+                               <div class="row mt-3 align-items-center timeline-section-pointer">
+                               <div class="col-md-6 text-center text-white">
+                                   <div class="text-cover rounded rounded-3 shadow-lg p-3">
+                                       <h2>1.活動主題</h2>
+                                       <p>光雕秀以巧克力為主題，通過精湛的投影技術展示了巧克力的製作過程和故事，讓觀眾身臨其境地感受到巧克力的魔幻世界。與此同時，悅耳的音樂和令人驚嘆的視覺效果更增添了表演的震撼力和感染力。無論是巧克力愛好者還是藝術愛好者，都能在這個大廳中度過一個難忘的時刻。</p>
+                                   </div>
+                               </div>
+                               <div class="col-md-6">
+                                   <div class="myimg bg-cover" style="background-image: url(images/chocolate3.jpg);height: 360px;"></div>
+                               </div>
+                           </div>
+                           <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
+                               <div class="col-md-6 text-center text-white">
+                                   <div class="text-cover rounded rounded-3 shadow-lg p-3">
+                                       <h2>2.手作商品專區</h2>
+                                       <p>精心製作，口感絲滑，令人垂涎欲滴的巧克力美味，每一口都是極致享受。</p>
+                                   </div>
+                               </div>
+                               <div class="col-md-6">
+                                   <div class="myimg bg-cover" style="background-image: url(images/chocolate2.webp);height:360px"></div>
+                                  
+                               </div>
+                           </div>
+                   
+                           <div class="row mt-3 align-items-center timeline-section-pointer">
+                               <div class="col-md-6 text-center text-white">
+                                   <div class="text-cover rounded rounded-3 shadow-lg p-3">
+                                       <h2>3.可可知識區</h2>
+                                       <p>深入探索可可的起源、製作過程和文化意義，帶您進入美味和奇妙的可可世界。</p>
+                                   </div>
+                               </div>
+                               <div class="col-md-6">
+                                   <div class="myimg bg-cover" style="background-image: url(images/chocolate.jpg);height:360px"></div>
+                                  
+                               </div>
+                           </div>
+                   
+                           <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
+                               <div class="col-md-6 text-center text-white">
+                                   <div class="text-cover rounded rounded-3 shadow-lg p-3">
+                                       <h2>4.DIY體驗專區</h2>
+                                       <p>親手製作獨一無二的巧克力美味，享受創造的樂趣，將幸福分享給親朋好友。
+                                       </p>
+                                   </div>
+                               </div>
+                               <div class="col-md-6">
+                                   <div class="myimg bg-cover" style="background-image: url(images/chocolate2.jpg);height:360px"></div>
+                                  
+                               </div>
+                           </div>
+                       </div>
+                  
+           </section>
+    </section>
+    
+    <!-- <section 06> -->
+        <section id="s06">
+            <section class="bg-info py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 text-white text-center">
+                            <i class="fa-solid fa-dog text-danger fa-7x me-4 mt-3 wow animate__zoomIn"data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="5"></i>
+                            <h2 class="fw-700">寵物互動區</h2>
+                            <p>提供安全、趣味的空間，讓寵物與主人一起玩耍、訓練，增進彼此感情。</p> 
+                        </div>
+                        <div class="col-md-4 text-white text-center">
+                            <i class="fa-solid fa-utensils text-warning fa-7x me-4 mt-3"></i>
+                            <h2 class="fw-700">轉角餐飲</h2>
+                            <p>我們為您帶來精緻美食，滿足您的味蕾</p> 
+                        </div>
+                        <div class="col-md-4 text-white text-center">
+                            <i class="fa-solid fa-hotel text-success fa-7x me-4 mt-3"></i>
+                            <h2 class="fw-700">住宿酒店</h2>
+                            <p>舒適安逸，讓您放鬆身心，享受愉悅時光。</p> 
+                        </div>
+                    </div>
+                </div>
+        
+        </section>
+        </section>
+        
+    <!-- <section 07> -->
+        <section class="bg-light py-5" style="position: relative;">
+          <div class="row">
+            <div class="col-md-5 bg-cover wow animate__lightSpeedInRight" style="background-image: url(images/dog5.jpg);position: absolute; top:0; bottom:0;" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"></div>
+          </div>
+          <div class="container01">
+            <div class="row justify-content-end">
+                <div class="col-md-7 p-3 text-s07">
+              <h1 class=" ab fw-700 "><i class="fa-solid fa-face-grin-stars"></i>Explore the Wonderful World of Chocolate</h1>
+                
+                
+                <h5 class="py-3 text-light">探索巧克力的奇妙世界<br>
+               Welcome to our Chocolate Factory Tour,<br> where chocolate lovers unite! Join us on a journey through the magical realm of chocolate,<br> and indulge in the delightful experience of its creation and taste.</h5>
+                
+                <h5 class="text-light">歡迎來到我們的巧克力觀光工廠，<br> 這裡是巧克力愛好者的天堂！<br> 讓我們一起穿越巧克力的神奇世界，<br> 沉浸在製作和品味的美好體驗中。</h5>
+              <button class="btn btn-outline-primary">查看更多</button>
+              <div class="row mt-4">
+                <div class="col-6">
+                    <h3 class="fw-500 ab">Discover the Secrets of Chocolate</h3>
+                    <p class="text-light"> 發現巧克力的秘密<br>    
+                        Embark on our guided tour to uncover the origins, production methods, and stories behind chocolate. From the cultivation of cocoa beans to the exquisite packaging of chocolate, each step reveals the mystery of chocolate.<br>            
+                        跟隨我們的導覽之旅，揭開巧克力的故事。從可可豆的種植到精美包裝的巧克力，每一個步驟都將揭開巧克力的神秘面紗。
+                    </p>
+                </div>
+              <!-- <div class="row mt-4">
+                <div class="col-6">
+                    <h1 class="fw-700 ab text-s07">Discover the Secrets of Chocolate</h1>
+                    <h5 class="text-light text-s07">
+                        發現巧克力的秘密
+                        
+                        Embark on our guided tour to uncover the origins, production methods, and stories behind chocolate. From the cultivation of cocoa beans to the exquisite packaging of chocolate, each step reveals the mystery of chocolate.
+                        
+                        跟隨我們的導覽之旅，揭開巧克力的來源、製作方法和故事。從可可豆的種植到精美包裝的巧克力，每一個步驟都將揭開巧克力的神秘面紗。</h5>
+                </div> -->
+                <div class="col-6 wow animate__fadeOutUp" data-wow-duration="6s" data-wow-delay="0s" data-wow-iteration="1">
+                    <h3 class="fw-700 ab">Taste Classic Chocolates from Around the World </h3>
+                    <h5 class="text-light">
+                        品味來自世界各地的經典巧克力
+                        Indulge in a selection of fine chocolates from around the world at our factory store. Whether it's the rich Belgian chocolate, the sweet Swiss chocolate, or the creatively crafted artisanal chocolates, each bite takes you on a journey of flavor.</h5>
+                </div>
+              </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        
+   <!-- section 08   -->
+   <section id="s08">
+    <div class="container02">
+        <div class="display-3 text-light fw-700 text-center my-3">公司四大服務項目</div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="d-flex">
+                    <i class="fa-brands fa-space-awesome fa-7x me-4 mt-3 wow animate__backInUp"
+                    data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1"></i>
+                    <div>
+                        <div class="h2 fw-700 text-center pe-4">探索巧克力的奇妙世界！</div>
+                        <p>歡迎來到我們的巧克力觀光工廠，一個充滿驚喜和美味的地方！無論您是巧克力愛好者還是對美食探索感興趣，我們的工廠都將給您帶來前所未有的體驗。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="d-flex">
+                    <i class="fa-solid fa-cookie-bite fa-7x me-4 mt-3 wow animate__jello"
+                    data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"></i>
+                    <div>
+                        <div class="h2 fw-700 text-center">品嚐巧克力的樂趣</div>
+                        <p>走進我們的工廠，您將被迷人的巧克力香氣所包圍。跟隨我們的專家導遊，您將有機會一窺巧克力的製作過程，從可可豆的收穫到製成誘人的巧克力品。品嚐新鮮出爐的巧克力，享受純正美味的同時，了解巧克力的製作秘密。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="d-flex">
+                    <i class="fa-solid fa-chalkboard-user fa-7x me-4 mt-3"></i>
+                    <div>
+                        <div class="h2 fw-700 text-center">沉浸式學習體驗</div>
+                        <p>我們的工廠不僅僅是一個觀光景點，更是一個充滿教育意義的場所。孩子們可以參加互動式的工作坊，親手製作巧克力，了解可可豆的起源以及為什麼巧克力對我們的身心健康有益。我們專業的教育團隊將為您帶來一場生動的學習體驗。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="d-flex">
+                    <i class="fa-solid fa-location-dot fa-7x me-4 mt-3"></i>
+                    <div>
+                        <div class="h2 fw-700 text-center">計劃您的探索之旅</div>
+                        <p>準備好探索巧克力的奇妙世界了嗎？立即計劃您的探索之旅，帶著家人和朋友一同來到我們的巧克力觀光工廠，開啟一段美妙的巧克力之旅！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- section 09   -->
+   <section style="position: relative;">
+    <div class="container03">
+        <div class="row">
+            <div class="col-md-7 text-s09">
+                <dl class="row">
+                    <h5 class="col-sm-6 mt-3 ps-4 text-light"><i class="fa-solid fa-star text-danger"></i>Indulge in a journey of heavenly flavors</h5>
+                    <h6 class="col-sm-4 mt-3">Let your taste buds sail in the sea of rich Italian chocolate gelato.</h6>
+                 
+                    <h5 class="col-sm-6 ps-4 text-light"><i class="fa-solid fa-star text-warning"></i>An authentic indulgence</h5>
+                    <dd class="col-sm-4">
+                      <h6>Each bite is a promise of quality, each scoop a pledge of intense flavor.</h6>
+                    </dd>
+                  
+                    
+                    <h5 class="col-sm-12 ps-4 text-light"><i class="fa-solid fa-star text-success"></i>Seduced by the allure of dark chocolate, experience a different kind of bliss.</h5>
+                  
+                  
+                    <h5 class="col-sm-12 mt-3 ps-4 text-light"><i class="fa-solid fa-star text-info"></i>Dream of chocolate, delight in gelato: savor the richness of chocolate in every bite, and let the gelato bring you endless joy.</h5>
+                    <dd class="col-sm-9">
+                      <dl class="row">
+                       
+                        <h5 class="col-sm-12 mt-3 ps-4 text-light"><i class="fa-solid fa-star text-primary"></i>A cup of passion, a touch of satisfaction: find life's sweetest moments in this rich Italian chocolate gelato.</h5>
+                      </dl>
+                    </dd>
+                  </dl>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-md-5 bg-cover wow animate__heartBeat" style="background-image: url(images/chocolate2.jpg);position: absolute; top:0;bottom: 0;" data-wow-duration="2s" 
+        data-wow-delay="0s" 
+        data-wow-iteration="1"></div>
+    </div>
+   </section>
+   <!-- section 10 -->
+   <section class="abc">
+    <h2 class="text-bg-warning text-light fw-700 text-center">最新商品<i class="fa-solid fa-cart-plus text-danger wow animate__bounceOut" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"></i></h2>
+    
+    <div class="container">
+        <div class="row">
+    <div class="col-md-4 mt-3 d-flex flex-column">
+        <img src="images/chocolate05.jpg" class="img-fluid wow animate__heartBeat"data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">
+        <div class="h3 mt-3">手工製作巧克力棒</div>
+        <p>新鮮手工製作的巧克力棒，口感豐富，絕對讓您愛不釋手。</p>
+        <button class="btn btn-primary w-100 mt-auto">了解更多</button>
+    </div>
+    <div class="col-md-4 mt-3 d-flex flex-column">
+        <img src="images/chocolate06.jpg" class="img-fluid"alt="">
+        <div class="h3 mt-3">巧克力松露球</div>
+        <p>口感醇厚的巧克力松露球，每一口都充滿濃郁的巧克力風味。</p>
+        <button class="btn btn-primary w-100 mt-auto">了解更多</button>
+    </div>
+    <div class="col-md-4 mt-3 d-flex flex-column">
+        <img src="images/chocolate07.jpg" class="img-fluid"alt="">
+        <div class="h3 mt-3">特色巧克力禮盒</div>
+        <p>精選精美巧克力禮盒，適合各種節日和場合送禮。</p>
+        <button class="btn btn-primary w-100 mt-auto">了解更多</button>
+    </div>
+</div>
+</div>
+   </section>
+   <!-- section 11   -->
+   <section id="s11">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29119.57440410361!2d120.59696455!3d24.17359845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stw!4v1715565320508!5m2!1sen!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for=""class="form-label">姓名</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">電話</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for=""class="form-label">Email</label>
+                    <input type="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for=""class="form-label">人數</label>
+                    <input type="number" min="1" max="10" value="2" class="form-control">
+                </div>
+                <div class="mb-1 form-check form-check-inline">
+                    <input type="radio" class="form-check-input">
+                    <label for=""class="form-check-label">參加</label>
+                </div>
+                <div class="mb-1 form-check form-check-inline">
+                    <input type="radio" class="form-check-input">
+                    <label for=""class="form-check-label">不參加</label>
+                </div>
+                <div class="mb-1">
+                    <button class="btn btn-outline-secondary">取消</button>
+                    <button class="btn btn-primary">確認</button>
+                </div>
+            </div>
+        </div>
+       </div>
+   </section>
+   <!-- transportation -->
+   <section>
+    <!-- <section class=" py-5"> -->
+        <div class="container02">
+          <div class="display-3 text-light fw-700 text-center my-3">Transportation交通資訊</div>
+            <div class="row" style="padding: 5px;">
+                <div class="col-md-4 text-white text-center" >
+                   <i class="fa-solid fa-train text-dark fa-7x  wow animate__flipInX"
+            data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1"></i>
+                   <p>苗栗火車站下車<br />搭新竹客運往大湖卓蘭方向<br />經汶水老街在法雲寺站下車<br />往雪霸國家公園管理處方向<br />步行十分鐘可抵達</p>
+                </div>
+                <div class="col-md-4 text-white text-center ps-3">
+                    <i class="fa-solid fa-train-subway text-dark fa-7x wow animate__flipInX"
+            data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"></i>
+                  
+                    <p>苗栗後龍高鐵站下車<br />往１號出口方向搭乘<br />101號高鐵快捷公車<br />竹南科學園區&gt;&gt;高鐵苗栗站&gt;&gt;<br />雪霸國家公園管理處<br />在終點站下車後往上步行<br />五分鐘即可抵達</p>
+                </div>
+                <div class="col-md-4 text-white text-center">
+                    <i class="fa-solid fa-car text-dark fa-7x me-4 mt-3 wow animate__flipInX"data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"></i>
+                   
+                   <p>中山高苗栗交流道下<br />往苗栗市區方向<br />行約1公里處左轉<br />接72號東西快速道路 往汶水、大湖方向終點右轉台三線<br />過汶水大橋後左轉苗62線<br />往泰安方向1分鐘即可抵達</p>
+                </div>
+            </div>
+        </div>
+
+</section>
+</section>
+   <!-- section 12   -->
+   <section>
+    <div class="row mt-3">
+        <div class="col-md-6 bg-cover" style="background-image: url(images/job01jpg.jpg);">
+            <div class="row">
+                <div class="col-md-7 p-5">
+                    <small class="badge text-bg-danger wow animate__jello" data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1" >加入我們</small>
+                    <h3 class="left-center">應徵業務經理數名</h3>
+                    <ol>
+                    <li >相關學歷： 大學學位或以上，尤其是商業管理、市場營銷或相關領域。</li>
+                    <li>業務經驗： 至少3年以上相關行業的業務經驗。</li>
+                    <li>領導能力： 良好的領導和團隊管理能力。</li>
+                    </ol>      
+                    <button class="btn btn-outline-warning">應徵此工作</button>
+                </div>
+            </div>
+            </div>
+<div class="col-md-6 bg-cover" style="background-image: url(images/job01.avif);">
+<div class="row">
+    <div class="col-md-7 p-5">
+        <small class="badge text-bg-danger wow animate__jello"data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">加入我們</small>
+        <h3>應徵儲備幹部數名</h3>
+        <p>
+         <ol>
+            <li>教育背景： 大學本科或以上學歷，尤其是商業管理、人力資源管理或相關專業。</li>
+            <li>專業知識： 對組織管理、人力資源管理、市場營銷等相關領域有深入的了解。</li>
+            <li>領導能力： 具有良好的領導潛力和管理能力，有組織和指導團隊的能力。</li>
+         </ol>   
+        </p>
+        <button class="btn btn-outline-warning ">應徵此工作</button>
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+   </section>
+   
+
+   
+ <!-- section 13 -->
+ <section class="sec">
+    <div class="sec__half sec__half-1">
+          <h2 class="sec__big-title wow animate__lightSpeedInLeft" data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="10">COME ON IN!</h2>   
+      <h2 class="sec__title">Weekdays</h2>
+      <p class="sec__desc text-danger fw-700">08PM - 12AM</p>
+      <h3 class="sec__title">Weekends</h3>
+      <p class="sec__desc text-danger fw-700">12PM - 02AM</p>
+      <a href="#" class="btn1">Browse menu</a>
+    </div>
+    <div class="sec__half sec__half-2">
+      <h2 class="sec__big-title"><i class="fa-solid fa-phone text-secondary wow animate__swing"data-wow-duration="1s" data-wow-delay="0s"data-wow-iteration="2"></i>CONTACT</h2>
+      <h3 class="sec__title01">Phone</h3>
+      <p class="sec__desc">(04) 123 456 789</p>
+      <h3 class="sec__title01">Mail</h3>
+      <p class="sec__desc">abc@mail.com</p>
+      <h3 class="sec__title01">Address</h3>
+      <p class="sec__desc">Taiwan boulevard sec 2<br>
+        Taichung, Taiwan
+      </p>
+    </div>
+  </section>
+
+  <!-- section 14   -->
+  <section>
+    <div class="container14 wow animate__fadeInRight"data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link disabled">Power By 跨平台班級製作</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"aria-current="page" href="#">購物商城</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">facebook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">instagram</a>
+            </li>
+          </ul>
+    </div>
+   </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        $(function () {
+            //wowjs
+            new WOW().init();
+            //counter up2
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+            const el01 = document.querySelector('.counter01')
+            IO.observe(el01)
+
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+        });
+    </script>
+</body>
+</html>
